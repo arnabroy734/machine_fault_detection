@@ -90,7 +90,7 @@ sidebar = html.Div(
                 html.A([
                     html.I(className="fa-brands fa-github fa-xl", style={'margin-right':"5px"}),
                     "Github Link"
-                ], href='www.google.co.in', style={'margin-top':'20px', 'text-align':'center', 'color' : '#1f2328'}),
+                ], href='https://github.com/arnabroy734/machine_fault_detection', style={'margin-top':'20px', 'text-align':'center', 'color' : '#1f2328'}),
 
                 html.A([
                     html.I(className="fa-solid fa-database fa-lg", style={'margin-right':"5px"}),
@@ -258,19 +258,3 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 
 
 
-if __name__ == "__main__":
-    try:
-        healthy_data = HealthyData()
-        faulty_data = FaultyData()
-
-        with open(CLUSTERING_MODEL, 'rb') as f:
-            clustering_model = pickle.load(f)
-            f.close()
-        
-        with open(ISOLATION_MODEL, 'rb') as f:
-            isolation_model = pickle.load(f)
-            f.close()
-
-        app.run_server(debug=True)
-    except Exception as e:
-        print(e)
