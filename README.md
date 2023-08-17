@@ -26,7 +26,7 @@ During EDA it is observed that **trends of faulty parameters are completely diff
 
 Another important observation is that **the data is periodic in nature**. Even if the trends of healthy and faulty data are different peak values might be same (in above graph max/peak value of TP2 is same for healthy and faulty data both though the trend is completely different). So simply applying some anomaly detection technique will not work. **That is why smoothening (moving average - exponential and simple) is done in preprocessing step.** Simple and exponential moving average with different window sizes are used as hyperparameters and tuned for best model performance.
 
-Two techniques of anomaly detection detection are used - **KMeans Clustering with 2 cluster and Isolation Forest**. Out of these two KMeans clustering produces better result. Please refer [**/log/clustering_log.txt**](**clustering log**) and [**/log/isolation_forest_logs.txt**](**isolation forest log**) for training result.
+Two techniques of anomaly detection detection are used - **KMeans Clustering with 2 cluster and Isolation Forest**. Out of these two KMeans clustering produces better result. Please refer [**clustering logs**](/log/clustering_log.txt) and [**isolation forest logs**](/log/isolation_forest_logs.txt) for training result.
 
 ## Project Architecture
 The predcive model should be integrated with real time data source. In this project real time data is simulated by **module data_synthetic** as every 1 second. At the begining the source of simulated data is healthy data slice taken from the original dataset, but there is also a toggle button to change the data source to faulty data slice. 
