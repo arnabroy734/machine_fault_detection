@@ -17,9 +17,9 @@ Predictive maintenance is used to pre-empt faults in running machines. Different
 The dataset used in this project is available in [https://archive.ics.uci.edu/dataset/791/metropt+3+dataset](). From a metro train in an operational context, readings from pressure, temperature, motor current, and air intake valves were collected from a compressor's Air Production Unit (APU). 
 
 ## Approach to Solve the Problem
-The dataset is a multivariate time series data where different machine parameters are availale at interval of 10 seconds from Feb, 2020 to Aug, 2020. The original dataset is unlabeled but as per failure report provided by the company **some intervals are mentioned where Air Leak was detected in the system and breakdown maintenance was required.**
+The dataset is a multivariate time series data where different machine parameters are availale at interval of 10 seconds from Feb, 2020 to Aug, 2020. The original dataset is unlabeled but as per failure report provided by the company **some intervals are mentioned where Air Leak was detected in the system and breakdown maintenance was carried out.**
 
-So the data is first labeled as healthy and unhealthy and then EDA is performed. It is oberved that out of 1.5 Million timestamps only 0.2% records are available for fault data. As this dataset is highly imbalanced simple classification technique cannot be used. Simple clasification techniqe result in lot of false negatives. **So this problem is solved using anomaly detection technique.**
+So the data is first labeled as healthy and unhealthy and then EDA is performed. It is oberved that out of 1.5 Million timestamps only 0.2% records are available for fault data. As this dataset is highly imbalanced simple classification technique cannot be used. Simple clasification techniqe results in lot of false negatives. **So this problem is solved using anomaly detection technique.**
 
 ## Anomaly Detection
 During EDA it is observed that **trends of faulty parameters are completely different from those of healthy ones**. 
