@@ -5,6 +5,8 @@
 - [Approach to Solve the Problem](#approach-to-solve-the-problem)
 - [Anomaly Detection](#anomaly-detection)
 - [Project Architecture](#project-architecture)
+- [Sample Test Result](#sample-test-result)
+- [Deployed version of this project](http://13.233.94.224:8080/)
    
 &nbsp;
 
@@ -29,8 +31,24 @@ Another important observation is that **the data is periodic in nature**. Even i
 Two techniques of anomaly detection detection are used - **KMeans Clustering with 2 cluster and Isolation Forest**. Out of these two KMeans clustering produces better result. Please refer [**clustering logs**](/log/clustering_log.txt) and [**isolation forest logs**](/log/isolation_forest_logs.txt) for training result.
 
 ## Project Architecture
-The predcive model should be integrated with real time data source. In this project real time data is simulated by **module data_synthetic** as every 1 second. At the begining the source of simulated data is healthy data slice taken from the original dataset, but there is also a toggle button to change the data source to faulty data slice. 
+The predcive model should be integrated with real time data source. In this project real time data is simulated by **module data_synthetic** as every 1 second. At the begining the source of simulated data is healthy data slice taken from the original dataset, but there is also a **simulate fault** button to change the data source to faulty data slice. 
 
 The real time data is fed to saved model to get the prediction and result is updated in the frontend. This process is also done at the frequency of real time data i.e., every 1 second.
+
+![image](https://github.com/arnabroy734/machine_fault_detection/assets/86049035/1e16297b-d000-46e8-b572-35e239119316)
+
+## Sample Test Result
+
+At system startup when enough data is not available
+![Screenshot (1)](https://github.com/arnabroy734/machine_fault_detection/assets/86049035/26af9897-226f-4ec1-9b81-325d50968525)
+
+Healthy condition
+![Screenshot (2)](https://github.com/arnabroy734/machine_fault_detection/assets/86049035/392c478f-bfcf-44cc-8308-8075ba3d0595)
+
+Faulty condition
+![Screenshot (5)](https://github.com/arnabroy734/machine_fault_detection/assets/86049035/73fbe912-132b-473b-8be7-ee871300e7be)
+
+
+
 
 
